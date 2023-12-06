@@ -1,0 +1,35 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_vendor/
+bin/
+pkg/
+
+# Compiled Go files
+*.exe
+*.test
+*.prof
+
+# Ignore the binary output of the `go test -c` command
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories
+Godeps/
+vendor/
+
+# Local configuration file (this is usually specific to the IDE you're using)
+.idea/
+
+# Go executables
+*.exe
+*.test
+*.prof
+
+# Output directories
+_output/
