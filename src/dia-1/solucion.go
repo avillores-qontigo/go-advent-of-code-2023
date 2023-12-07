@@ -10,7 +10,7 @@ import (
 
 func removeNonNumeric(line string) string {
 	// Use a regular expression to match only numeric characters
-	numericRegex := regexp.MustCompile("[^-?\\d+$]")
+	numericRegex := regexp.MustCompile("[^0-9]")
 	result := numericRegex.ReplaceAllString(line, "")
 
 	return result
@@ -18,15 +18,14 @@ func removeNonNumeric(line string) string {
 
 func processLine(line string) int {
 	lineWithoutLetters := removeNonNumeric(line)
-	total := 0
-	for _, number := range lineWithoutLetters {
-		num, err := strconv.Atoi(string(number))
-		if err != nil {
-			fmt.Println("err:", err)
-		}
-		total += num
+	number := lineWithoutLetters[0:1] + lineWithoutLetters[len(lineWithoutLetters)-1:]
+	num, err := strconv.Atoi(number)
+	if err != nil {
+		fmt.Println(err)
 	}
-	return total
+	fmt.Println(num)
+
+	return num
 }
 
 func main() {
